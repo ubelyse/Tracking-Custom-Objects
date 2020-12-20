@@ -23,8 +23,8 @@ public class ChosenActivityArrayAdapter extends ArrayAdapter {
         return String.format("%s \nServes great: %s", morning, midday);
     }
 
-    @Override
+   /*@Override
     public int getCount() {
         return mMorningActivities.length;
-    }
+    }*/
 }

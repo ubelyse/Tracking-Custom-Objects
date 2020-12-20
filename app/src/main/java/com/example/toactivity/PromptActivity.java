@@ -3,11 +3,14 @@ package com.example.toactivity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
-public class PromptActivity extends DialogFragment {
+public class PromptActivity extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,4 +33,5 @@ public class PromptActivity extends DialogFragment {
         });
         return builder.create();
     }
+
 }

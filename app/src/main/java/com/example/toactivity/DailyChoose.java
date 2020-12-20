@@ -12,35 +12,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DailyChoose extends DialogFragment {
+public class DailyChoose extends AppCompatActivity {
+    @BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
+
+    @BindView(R.id.submitButton) Button msubmit;
+    @BindView(R.id.cancelButton) Button mcancel;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_daily_choose, container, false);
-        Button mSubmitButton = (Button) rootView.findViewById(R.id.submitButton);
-        Button mCancelButton = (Button) rootView.findViewById(R.id.cancelButton);
-        getDialog().setTitle("Simple Dialog");
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_daily_choose);
+        ButterKnife.bind(this);
 
-        mCancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
-
-        mSubmitButton.setOnClickListener(new View.OnClickListener() {
+        mcancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        return rootView;
 
-
+        msubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(DailyChoose.this,ChosenActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
