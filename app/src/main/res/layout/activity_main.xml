@@ -19,8 +19,10 @@
         android:layout_marginTop="88dp"
         android:layout_marginEnd="58dp"
         android:text="Let's Plan Your Day!"
+        android:textAlignment="center"
         android:textAllCaps="true"
-        android:textSize="28dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,6 +36,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="150dp"
-        android:text="GO" />
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="GO"
+        android:textSize="30sp" />
 
 </RelativeLayout>
