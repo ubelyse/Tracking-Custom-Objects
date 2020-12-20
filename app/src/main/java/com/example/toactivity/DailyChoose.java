@@ -21,7 +21,8 @@ import butterknife.ButterKnife;
 
 public class DailyChoose extends AppCompatActivity {
     @BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
-    @BindView(R.id.radioButton1) RadioButton mbtn1,mbtn2,mbtn3,mbtn4;
+    @BindView(R.id.radioButton1) RadioButton mbtn1;
+    @BindView(R.id.radioButton2) RadioButton mbtn2;
 
     @BindView(R.id.submitButton) Button msubmit;
     @BindView(R.id.cancelButton) Button mcancel;
@@ -46,8 +47,8 @@ public class DailyChoose extends AppCompatActivity {
                     Intent intent = new Intent(DailyChoose.this, ChosenActivity.class);
                     startActivity(intent);
                 }
-                else(mbtn2.isChecked()){
-                    Intent intent = new Intent(DailyChoose.this, ChosenActivity.class);
+                else if(mbtn2.isChecked()){
+                    Intent intent = new Intent(DailyChoose.this, ChoseMidDay.class);
                     startActivity(intent);
                 }
             }
