@@ -23,6 +23,7 @@ public class DailyChoose extends AppCompatActivity {
     @BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
     @BindView(R.id.radioButton1) RadioButton mbtn1;
     @BindView(R.id.radioButton2) RadioButton mbtn2;
+    @BindView(R.id.radioButton3) RadioButton mbtn3;
 
     @BindView(R.id.submitButton) Button msubmit;
     @BindView(R.id.cancelButton) Button mcancel;
@@ -51,6 +52,12 @@ public class DailyChoose extends AppCompatActivity {
                     Intent intent = new Intent(DailyChoose.this, ChoseMidDay.class);
                     startActivity(intent);
                 }
+
+                else if(mbtn3.isChecked()){
+                    Intent intent = new Intent(DailyChoose.this, ChoseAfternoon.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
