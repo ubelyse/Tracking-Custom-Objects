@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import butterknife.ButterKnife;
 
 public class DailyChoose extends AppCompatActivity {
     @BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
+    @BindView(R.id.radioButton1) RadioButton mbtn1,mbtn2,mbtn3,mbtn4;
 
     @BindView(R.id.submitButton) Button msubmit;
     @BindView(R.id.cancelButton) Button mcancel;
@@ -40,8 +42,14 @@ public class DailyChoose extends AppCompatActivity {
         msubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(DailyChoose.this,ChosenActivity.class);
-                startActivity(intent);
+                if (mbtn1.isChecked()) {
+                    Intent intent = new Intent(DailyChoose.this, ChosenActivity.class);
+                    startActivity(intent);
+                }
+                else(mbtn2.isChecked()){
+                    Intent intent = new Intent(DailyChoose.this, ChosenActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }

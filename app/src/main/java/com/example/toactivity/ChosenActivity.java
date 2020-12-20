@@ -22,8 +22,7 @@ public class ChosenActivity extends AppCompatActivity {
 
     @BindView(R.id.locationTextView)  TextView mLocationTextView;
     @BindView(R.id.listView)  ListView mListView;
-    //@BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
-    RadioButton mbtn1,mbtn3;
+    LinearLayout linearLayout;
 
     private String[] MorningActivities=new String[]{"Stretch","Drink water","Exercise","Eat breakfast","Read a motivational quote","Listen to music","Do a mental puzzle","Get updated on the news","Plan your day","Pack a healthy snack for the day"};
     private String[] MiddayActivities=new String[]{"Eat Lunch"};
@@ -32,21 +31,13 @@ public class ChosenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chosen);
-        mbtn1=findViewById(R.id.radioButton1);
-        mbtn3=findViewById(R.id.radioButton3);
+        linearLayout=findViewById(R.id.linearlayout1);
         ButterKnife.bind(this);
 
-        ListSee();
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, MorningActivities);
+        mListView.setAdapter(adapter);
+
     }
 
-    private void ListSee() {
-        if (mbtn3.isChecked()){
-            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, MorningActivities);
-            mListView.setAdapter(adapter);
-        }
-        else{
-            Toast.makeText(this, "No", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 }
