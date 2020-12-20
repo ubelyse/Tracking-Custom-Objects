@@ -68,12 +68,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/submitButton"/>
 
-        <Button
-            android:text="cancel"
-            android:textColor="#FFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cancelButton"/>
       </RadioGroup>
 
     </LinearLayout>

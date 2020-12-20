@@ -27,20 +27,12 @@ public class DailyChoose extends AppCompatActivity {
     @BindView(R.id.radioButton4) RadioButton mbtn4;
 
     @BindView(R.id.submitButton) Button msubmit;
-    @BindView(R.id.cancelButton) Button mcancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_choose);
         ButterKnife.bind(this);
-
-        mcancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         msubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,4 +58,5 @@ public class DailyChoose extends AppCompatActivity {
             }
         });
     }
+
 }
