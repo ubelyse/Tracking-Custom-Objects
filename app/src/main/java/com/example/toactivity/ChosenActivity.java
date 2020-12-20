@@ -17,11 +17,12 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class ChosenActivity extends AppCompatActivity {
 
     @BindView(R.id.locationTextView)  TextView mLocationTextView;
     @BindView(R.id.listView)  ListView mListView;
-    @BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
+    //@BindView(R.id.sectionRadioGroup) RadioGroup mrdgrup;
     RadioButton mbtn1,mbtn3;
 
     private String[] MorningActivities=new String[]{"Stretch","Drink water","Exercise","Eat breakfast","Read a motivational quote","Listen to music","Do a mental puzzle","Get updated on the news","Plan your day","Pack a healthy snack for the day"};
@@ -31,48 +32,21 @@ public class ChosenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chosen);
-        LinearLayout linearLayout= findViewById(R.id.linearlayout1);
         mbtn1=findViewById(R.id.radioButton1);
         mbtn3=findViewById(R.id.radioButton3);
         ButterKnife.bind(this);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, MorningActivities);
-        ArrayAdapter adapter1=new ArrayAdapter(this, android.R.layout.simple_list_item_1,MiddayActivities);
-
-        if (mbtn1.isChecked()) {
-            mListView.setAdapter(adapter1);
-
-            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    String restaurant = ((TextView) view).getText().toString();
-                    Toast.makeText(ChosenActivity.this, restaurant, Toast.LENGTH_LONG).show();
-                }
-            });
-
-            Intent intent = getIntent();
-            String location = intent.getStringExtra("location");
-
-            mLocationTextView.setText("Here are all the restaurants near: " + location);
-        }
-
-        else if(mbtn3.isChecked()){
-            mListView.setAdapter(adapter);
-
-            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    String restaurant = ((TextView) view).getText().toString();
-                    Toast.makeText(ChosenActivity.this, restaurant, Toast.LENGTH_LONG).show();
-                }
-            });
-
-            Intent intent = getIntent();
-            String location = intent.getStringExtra("location");
-
-            mLocationTextView.setText("Here are all the restaurants near: " + location);
-        }
-
-
+        ListSee();
     }
+
+    private void ListSee() {
+        if (mbtn3.isChecked()){
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, MorningActivities);
+            mListView.setAdapter(adapter);
+        }
+        else{
+            Toast.makeText(this, "No", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
