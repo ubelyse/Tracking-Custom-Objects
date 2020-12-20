@@ -12,6 +12,8 @@
         <activity android:name=".ChosenActivity"></activity>
         <activity android:name=".DailyChoose"></activity>
         <activity android:name=".ChoseMidDay"></activity>
+        <activity android:name=".ChoseAfternoon"></activity>
+        <activity android:name=".ChoseEvening"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
